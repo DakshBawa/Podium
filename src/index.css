@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-stage font-sans text-cream antialiased; }
+:focus-visible { outline: 2px solid #ffb020; outline-offset: 3px; }
+
+@layer components {
+  .card { @apply rounded-3xl border border-edge bg-panel p-5; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-stage transition hover:brightness-110 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-edge px-5 py-3 text-sm font-semibold text-cream transition hover:bg-white/5; }
+  .field { @apply w-full rounded-xl border border-edge bg-stage px-3.5 py-2.5 text-sm text-cream placeholder:text-cream/35 focus:border-amber focus:outline-none; }
+  .label { @apply text-[11px] font-bold uppercase tracking-[0.16em] text-cream/50; }
+}

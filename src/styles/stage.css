@@ -1,0 +1,12 @@
+/* Stage: spotlight glow, pulsing record button, level bars */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 70% 45% at 50% -5%, #ffb02030, transparent 70%), radial-gradient(ellipse 40% 30% at 90% 100%, #ff6b4a14, transparent 70%); }
+.rec-pulse { animation: rec 1.6s ease-out infinite; }
+@keyframes rec { 0% { box-shadow: 0 0 0 0 #ff6b4a88; } 100% { box-shadow: 0 0 0 22px #ff6b4a00; } }
+.level-bar { transition: height .12s linear; }
+.fade-up { animation: fade .4s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.count-pop { animation: pop .9s ease both; }
+@keyframes pop { 0% { opacity: 0; transform: scale(.6); } 40% { opacity: 1; transform: scale(1.05); } 100% { opacity: .9; transform: scale(1); } }
+mark.filler { background: #ffb02033; color: #ffcf6b; border-radius: 4px; padding: 0 3px; }
+@media (prefers-reduced-motion: reduce) { .rec-pulse, .fade-up, .count-pop { animation: none; } .level-bar { transition: none; } }
